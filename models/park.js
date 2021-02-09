@@ -9,6 +9,15 @@ Park.prototype.addDinosaur = function(dinosaur){
 Park.prototype.removeDinosaur = function(){
     this.dinosaurs.pop()
 };
+Park.prototype.findAllOfParticularSpecies = function(species){
+    let foundDinosaurs = [];
+    for (const dinosaur of this.dinosaurs){
+        if(dinosaur.species == species){
+            foundDinosaurs.push(dinosaur);
+        };
+    };
+    return foundDinosaurs;
+};
 
 Park.prototype.calculateTotalDailyVisitors = function(){
     let total = 0;
