@@ -28,22 +28,29 @@ Park.prototype.calculateTotalDailyVisitors = function(){
     return total;
 };
 Park.prototype.calculateTotalYearlyVisitors = function(){
-    let total = 0;
-    for (const dinosaur of this.dinosaurs) {
-        total += dinosaur.guestsAttractedPerDay;
-    }
+    // let total = 0;
+    // for (const dinosaur of this.dinosaurs) {
+    //     total += dinosaur.guestsAttractedPerDay;
+    // }
+    total = this.calculateTotalDailyVisitors();
+   
     newTotal = total * 365;
     return newTotal;
 };
 Park.prototype.calculateTotalYearRevenue = function(){
-    let total = 0;
-    for (const dinosaur of this.dinosaurs) {
-        total += dinosaur.guestsAttractedPerDay;
-    }
-    newTotal = total * 365;
-    totalYearRevenue = newTotal * this.ticketPrice;
+    // let total = 0;
+    // for (const dinosaur of this.dinosaurs) {
+    //     total += dinosaur.guestsAttractedPerDay;
+    // }
+    // newTotal = total * 365;
+    total = this.calculateTotalYearlyVisitors();
+    totalYearRevenue = total * this.ticketPrice;
     return totalYearRevenue;
 }
+// Park.prototype.modulepark.removeAllOfParticularSpecies = function(species){
+    
+// };
+
 
 module.exports = Park;
 
