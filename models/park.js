@@ -3,5 +3,8 @@ const Park = function(name, ticketPrice, dinosaurs){
     this.ticketPrice = ticketPrice;
     this.dinosaurs = dinosaurs;
 };
+Park.prototype.addDinosaur = function(dinosaur){
+    this.dinosaurs.push(dinosaur);
+};
 
 module.exports = Park;
