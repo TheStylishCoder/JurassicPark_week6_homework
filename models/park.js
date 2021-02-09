@@ -26,6 +26,15 @@ Park.prototype.calculateTotalYearlyVisitors = function(){
     newTotal = total * 365;
     return newTotal;
 };
+Park.prototype.calculateTotalYearRevenue = function(){
+    let total = 0;
+    for (const dinosaur of this.dinosaurs) {
+        total += dinosaur.guestsAttractedPerDay;
+    }
+    newTotal = total * 365;
+    totalYearRevenue = newTotal * this.ticketPrice;
+    return totalYearRevenue;
+}
 
 module.exports = Park;
 
