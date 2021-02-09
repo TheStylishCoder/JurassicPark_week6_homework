@@ -18,7 +18,14 @@ Park.prototype.calculateTotalDailyVisitors = function(){
     }
     return total;
 };
-
+Park.prototype.calculateTotalYearlyVisitors = function(){
+    let total = 0;
+    for (const dinosaur of this.dinosaurs) {
+        total += dinosaur.guestsAttractedPerDay;
+    }
+    newTotal = total * 365;
+    return newTotal;
+};
 
 module.exports = Park;
 
